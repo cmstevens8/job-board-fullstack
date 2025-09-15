@@ -1,0 +1,12 @@
+# Node
+my-job-board/node_modules/
+
+# Python
+job-board-api/__pycache__/
+job-board-api/*.pyc
+
+# MacOS
+.DS_Store
+
+# Environment variables
+.env
