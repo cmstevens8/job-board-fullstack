@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://127.0.0.1:5000', // your backend URL
+  baseURL: process.env.NODE_ENV === 'production'
+    ? 'https://your-backend.onrender.com' 
+    : 'http://127.0.0.1:5000',
 });
 
 // Attach JWT automatically if stored
@@ -12,3 +14,4 @@ API.interceptors.request.use((config) => {
 });
 
 export default API;
+
