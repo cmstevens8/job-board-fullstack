@@ -1,12 +1,28 @@
-# Node
+# ================================
+# Node / Frontend
+# ================================
 my-job-board/node_modules/
+my-job-board/dist/
+my-job-board/build/
+my-job-board/.env
+my-job-board/.DS_Store
 
-# Python
+# ================================
+# Python / Backend
+# ================================
 job-board-api/__pycache__/
-job-board-api/*.pyc
+job-board-api/**/*.pyc
+job-board-api/.env
+job-board-api/instance/job_board.db
+job-board-api/.DS_Store
 
+# ================================
 # MacOS
+# ================================
 .DS_Store
 
-# Environment variables
-.env
+# ================================
+# Logs / temp files
+# ================================
+*.log
+*.tmp
