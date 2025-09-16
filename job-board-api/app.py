@@ -22,7 +22,12 @@ def create_app(testing=False):
     :param testing: If True, configures app for testing (in-memory SQLite DB)
     """
     app = Flask(__name__)
-    CORS(app)
+    
+    # git add job-board-api/app.pyAllow frontend (Vercel) + local dev to talk to backend
+    CORS(app, origins=[
+        "http://127.0.0.1:5173",
+        "https://job-board-fullstack-flame.vercel.app"
+    ])
     
     # Load base config
     app.config.from_object(Config)
