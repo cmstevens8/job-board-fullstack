@@ -1,9 +1,8 @@
 import axios from 'axios';
 
+// Use Vercel environment variable if available, otherwise fallback to local
 const API = axios.create({
-  baseURL: process.env.NODE_ENV === 'production'
-    ? 'https://your-backend.onrender.com' 
-    : 'http://127.0.0.1:5000',
+  baseURL: import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000',
 });
 
 // Attach JWT automatically if stored
@@ -14,4 +13,5 @@ API.interceptors.request.use((config) => {
 });
 
 export default API;
+
 
