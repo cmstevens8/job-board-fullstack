@@ -1,0 +1,10 @@
+Flask
+Flask-SQLAlchemy
+Flask-Bcrypt
+Flask-JWT-Extended
+flask-smorest
+Flask-Cors
+marshmallow
+pydantic
+psycopg2-binary
+gunicorn
