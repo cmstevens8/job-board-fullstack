@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
@@ -11,10 +11,11 @@ import MyApplications from './pages/MyApplications';
 import ApplicationsReceived from './pages/ApplicationsReceived';
 import AdminDashboard from './pages/AdminDashboard';
 import { ThemeContext } from './context/ThemeContext';
-import { AuthProvider, AuthContext } from './context/AuthContext';
+import { AuthContext } from './context/AuthContext';
 
 function App() {
   const [theme, setTheme] = useState('light');
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
@@ -31,36 +32,23 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <AuthProvider>
-        <Router>
-          <Navbar />
-          <div className="p-4 bg-gray-100 dark:bg-gray-900 min-h-screen mt-16">
-            <AuthContext.Consumer>
-              {({ user }) => (
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/login" element={<Login />} />
-                  <Route path="/register" element={<Register />} />
-                  <Route path="/jobs" element={<FindJobs />} />
-                  <Route path="/jobs-posted" element={<JobsPosted />} />
-                  <Route path="/jobs/:id" element={<JobDetail />} />
-                  <Route path="/admin" element={<AdminDashboard />} />
-
-                  {/* Conditional application routes */}
-                  <Route
-                    path="/applications"
-                    element={
-                      user?.role === 'job-seeker'
-                        ? <MyApplications />
-                        : <ApplicationsReceived />
-                    }
-                  />
-                </Routes>
-              )}
-            </AuthContext.Consumer>
-          </div>
-        </Router>
-      </AuthProvider>
+      <Router>
+        <Navbar />
+        <div className="p-4 bg-gray-100 dark:bg-gray-900 min-h-screen mt-16">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/jobs" element={<FindJobs />} />
+            <Route path="/jobs-posted" element={<JobsPosted />} />
+            <Route path="/jobs/:id" element={<JobDetail />} />
+            <Route path="/admin" element={<AdminDashboard />} />
+            
+            {/* New application routes */}
+            <Route path="/applications" element={user?.role === 'job-seeker' ? <MyApplications /> : <ApplicationsReceived />} />
+          </Routes>
+        </div>
+      </Router>
     </ThemeContext.Provider>
   );
 }
