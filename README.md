@@ -1,6 +1,6 @@
 # My Job Board
 
-A full-stack job board web application built with **React**, **Tailwind CSS**, and **Flask**.  
+A full-stack job board web application built with React, Tailwind CSS, and Flask.  
 Users can browse jobs, apply for positions, and manage their applications. Recruiters can post jobs and view applicants.
 ---
 
