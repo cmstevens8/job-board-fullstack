@@ -2,6 +2,11 @@
 
 A full-stack job board web application built with **React**, **Tailwind CSS**, and **Flask**.  
 Users can browse jobs, apply for positions, and manage their applications. Recruiters can post jobs and view applicants.
+---
+
+## Live Demo
+- **Frontend (Vercel):** [https://job-board-fullstack-flame.vercel.app/](https://job-board-fullstack-flame.vercel.app/)  
+- **Backend API (Render):** [https://verdant-api.onrender.com](https://verdant-api.onrender.com)  
 
 ---
 
@@ -66,6 +71,11 @@ npm run dev
 ```
 
 The app should now be running at http://localhost:5173
+
+## Backend
+
+- The Flask backend is deployed on Render here: https://verdant-api.onrender.com
+- For local development, follow the setup in your backend README or API documentation.
 
 ## Usage
 
