@@ -30,7 +30,7 @@ Users can browse jobs, apply for positions, and manage their applications. Recru
 ---
 
 ## Project Structure
-
+```
 my-job-board/
 │
 ├─ src/
@@ -45,7 +45,7 @@ my-job-board/
 ├─ package.json
 ├─ vite.config.js
 └─ README.md
-
+```
 
 ---
 
