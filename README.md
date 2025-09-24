@@ -31,20 +31,11 @@ Users can browse jobs, apply for positions, and manage their applications. Recru
 
 ## Project Structure
 ```
-my-job-board/
-│
-├─ src/
-│ ├─ components/ # React components (Navbar, JobCard, etc.)
-│ ├─ context/ # AuthContext & ThemeContext
-│ ├─ pages/ # React pages (Home, Login, FindJobs, JobDetail, etc.)
-│ ├─ services/ # API service functions
-│ ├─ styles/ # CSS / Tailwind
-│ └─ App.jsx # Main app component
-│
-├─ LICENSE # MIT License
-├─ package.json
-├─ vite.config.js
-└─ README.md
+job-board-project/
+├─ my-job-board/       # React frontend
+├─ job-board-api/      # Python backend
+├─ README.md
+└─ LICENSE
 ```
 
 ---
